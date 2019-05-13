@@ -126,7 +126,7 @@ header #loginregister{
   max-width: 100%;
   background: url('../images/Main-Photo.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   text-align: center;
   border-bottom: solid #8860d0;
 }
