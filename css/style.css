@@ -7,6 +7,15 @@
 
 
 /* Global Values Such As h1, h2*/
+html{
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
 
 body{
   font-family: 'Montserrat', sans-serif;
@@ -40,12 +49,13 @@ ul{
   width: 90%;
   margin: auto;
   overflow: hidden;
+
 }
 
 header{
   background: rgb(211, 224, 229, 0.5);
-  padding-top: 1.85em;
-  padding-bottom: 1.85em;
+  padding-top: 0.6vw;
+  padding-bottom: 0.6vw;
 
 }
 
@@ -98,7 +108,6 @@ header #loginregister{
   padding-right: 0.6em;
   padding-top: 0.75em;
   padding-bottom: 0.75em;
-
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -112,22 +121,18 @@ header #loginregister{
 }
 
 #showcase{
-
-  height: 100vh;
+  height: 92vh;
   width: auto;
+  max-width: 100%;
   background: url('../images/Main-Photo.png');
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-
+  border-bottom: solid #8860d0;
 }
 
-
-#showcase #showcase-text{
-
-
-
-}
+/* #showcase #showcase-text{
+} */
 
 #showcase #showcase-text h1{
   color: #8860d0;
@@ -135,22 +140,15 @@ header #loginregister{
   font-size: 5.5vh;
   padding: 0;
   margin: 0;
-
 }
 
 #showcase #showcase-text p{
-
   color: #fff;
   font-size: 3vh;
   padding-left: 2vw;
   padding-right: 2vw;
   background: rgba(86, 182, 233, 0.5);
-
-
 }
-
-
-
 
 #showcase #showcase-text .learnmore{
   border-radius: 5px;
@@ -167,7 +165,6 @@ header #loginregister{
   margin-right: 15vw;
   text-align: center;
   text-decoration: none;
-
   font-size: 2vh;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
@@ -184,38 +181,13 @@ header #loginregister{
   background-color: #8860D0;
   border: 0;
   padding: 0.5em;
-
-
 }
+
 .container1{
   width: 70%;
   margin: auto;
   overflow: hidden;
   text-align: center;
-}
-
-#under-showcase{
-  text-align: center;
-  width: auto;
-  border-bottom: 3px solid #2c2c2c;
-
-}
-
-#under-showcase img{
-
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  margin-top: 2em;
-
-
-}
-
-#under-showcase .box{
-  float: left;
-  text-align: center;
-  color: #2c2c2c;
-  width:33%;
 }
 
 .container2{
@@ -226,47 +198,61 @@ header #loginregister{
 
 }
 
-.item{
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-
-.PhotoSide{
-  margin: 0;
-  padding: 0;
-  width: 50%;
-}
-
-.item .PhotoSide img{
-   width: 100%;
-   max-height: 100%;
-   object-fit: cover;
-}
-
-.TextSide{
-  width: 50%;
-  margin: 0;
-  padding: 0;
-  background: #634296;
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: ". ." ". .";
+  grid-gap: 0;
+  background-color: #8860D0;
+  max-width: 100vh;
+  margin: auto;
   color: #fff;
-  font-weight: 300;
+  font-size: 1.1vw;
+  align-items: center;
 }
 
-.TextSide h1{
+.grid-container h1{
   font-weight: 300;
-  padding: 1em;
+  font-size: 2vw;
+  text-align:center;
+  padding: 0;
+  margin: auto;
+}
+
+.grid-container p{
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
+  font-size: 0.8vw;
+}
+
+.grid-container .grid-item .seemore{
   text-align: center;
-  font-size: 2.4em;
+  align-items: center;
 }
 
-.TextSide p{
-  font-weight: 300;
-  padding-left: 4em;
-  padding-right: 2em;
-  padding-bottom: 1em;
-  font-size: 0.9em;
+.container .grid-container .grid-item img{
+  margin: 0;
+  padding: 0;
+  border-radius: 0px;
+  border: 0;
+  max-width: 100%;
+  object-fit: fill;
+}
 
+
+
+.grid-container a{
+  display: block;
+  text-decoration: none;
+  background-color: #9CBD69;
+  color: #fff;
+  border-radius: 5px;
+
+  padding: 0.6vh 0 0.6vh 0;
+  margin: 0 7em 0 7em;
+  text-align: center;
+  align-items: center;
 }
 
 .container2 a{
@@ -289,25 +275,27 @@ header #loginregister{
   margin: 2em 1em 5em 1em;
 }
 
-
-/* #photo1{
+.box{
+  display: inline-block;
   text-align: center;
-  width: 50%;
+  width:32%;
+  margin: auto;
+  align-items: center;
+  padding-top: 4vh;
+
+  border-bottom: solid red;
+  margin-bottom: 4vh;
+  border-radius: 15px;
 }
 
-#photo1 img{
-  margin-top: 3em;
-  display: inline;
-  width: auto;
-  max-width: 100%;
-  height: auto;
+.box img{
+  width: 90px;
 }
 
-#photo1 #photo1div{
-  float: right;
+.undershowcase{
+  background-color: rgb(211, 224, 229, 0.5);
 }
 
-#photo1 h1, #photo1 p{
-  display: inline;
+#learnmore{
+  background-color: rgb(211, 224, 229, 0.5);
 }
-*/
